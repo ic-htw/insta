@@ -14,6 +14,8 @@
 **/*.duckdb.tmp
 **/*.kuzudb
 **/csv
+**/insta.tar.gz
+**/DAT260.tar.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
