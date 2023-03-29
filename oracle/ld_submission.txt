@@ -1,0 +1,5 @@
+load data
+infile 'sample_submission.csv'
+into table submission
+fields terminated by ','
+(order_id)

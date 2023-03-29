@@ -1,0 +1,5 @@
+load data
+infile 'order_products__prior.csv'
+into table order_products__prior
+fields terminated by ','
+(order_id,product_id,add_to_cart_order,reordered)
