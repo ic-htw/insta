@@ -1,0 +1,42 @@
+select count(*) from orders;
+delete  from  orders;
+
+-- 3.421.083
+import from csv file '/usr/sap/HXE/home/db/instacart/orders.csv' into orders with 
+  record delimited by '\n'
+  field delimited by ','
+  skip first 1 row
+  threads 10
+  batch 10000
+  column list (order_id,user_id,eval_set,order_number,order_dow,order_hour_of_day)
+  error log '/usr/sap/HXE/home/db/instacart/orders.log'
+;
+
+
+select count(*) from order_products__prior;
+delete  from  order_products__prior;
+
+-- 32.434.489
+import from csv file '/usr/sap/HXE/home/db/instacart/order_products__prior.csv' into order_products__prior with 
+  record delimited by '\n'
+  field delimited by ','
+  skip first 1 row
+  threads 10
+  batch 10000
+  error log '/usr/sap/HXE/home/db/instacart/order_products__prior.log'
+;
+
+select count(*) from submission;
+delete  from  submission;
+
+-- 75.000
+import from csv file '/usr/sap/HXE/home/db/instacart/sample_submission.csv' into submission with 
+  record delimited by '\n'
+  field delimited by ','
+  skip first 1 row
+  threads 10
+  batch 10000
+  column list (order_id)
+  error log '/usr/sap/HXE/home/db/instacart/sample_submission.log'
+;
+

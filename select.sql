@@ -1,6 +1,22 @@
-select count(*) from submission;
-select count(*) from orders;
-select count(*) from order_products__prior;
+select count(*) from submission; -- 75000
+select count(*) from orders; -- 3.421.083
+select count(*) from order_products__prior; -- 32.434.489
+
+
+select * from vsubmission order by order_id;
+
+select count(*) from vsubmission;
+
+select count(*) from orders where eval_set = 'prior';
+select count(*) from prior_orders_of_test_users;
+select count(*) from prior_orders_3_of_test_users;
+select count(*) from user_products;
+select count(*) from testorders_products;
+select count(*) from prior_orders_of_test_users;
+
+
+
+
 
 select * from submission order by order_id;
 select * from orders order by order_id;
@@ -11,6 +27,8 @@ select * from vsubmission order by order_id;
 select * from vsubmission where order_id=2774568; 
 
 select * from vsubmission where order_id in (2297, 9318, 9503, 12745,  13787);
+
+
 
 Oracle
 select * from (select * from submission order by order_id) where rownum <= 10;

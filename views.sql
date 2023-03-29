@@ -1,3 +1,9 @@
+drop view prior_orders_of_test_users;
+drop view prior_orders_3_of_test_users;
+drop view user_products;
+drop view testorders_products;
+drop view vsubmission;
+
 create view prior_orders_of_test_users as
 select prior_orders.user_id, order_number, order_id
 from
@@ -34,7 +40,3 @@ from submission s
      left join testorders_products tp on s.order_id=tp.order_id
 group by s.order_id;
 
-
-select * from vsubmission where order_id=2774568 
-
-select * from vsubmission where order_id in (2297, 9318, 9503, 12745,  13787)
