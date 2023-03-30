@@ -38,4 +38,3 @@ create  table aisles (
 alter table order_products__prior
     add constraint fk1 foreign key (order_id) references orders (order_id);
 
--- create btree index i1 on order_products__prior (order_id);
